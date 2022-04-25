@@ -1,0 +1,18 @@
+<!-- <div>
+    <span>
+        {{user?.id+ ':'}}
+    </span>
+    <a>{{user?.NAME}}</a>
+    <span> {{'Email:' +  user?.email }}</span>
+</div> -->
+
+
+
+
+
+<div *ngFor="let user of users" class="text-dark">
+    <span>
+        {{user?.NAME+ ':'}}
+    </span>
+    <a [routerLink]="['/user',user?.id]" class="text-dark">{{user?.email}}</a>
+</div>

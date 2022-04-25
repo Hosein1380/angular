@@ -1,0 +1,13 @@
+<!-- <p>{{'id:'+user?.id}}</p>
+<p>{{'name:'+user?.NAME}}</p>
+<p>{{'email:'+user?.email}}</p>
+<p>{{'password:'+user?.PASSWORD}}</p> -->
+<label>{{'id:'}}</label>
+<input #id type="text" [value]="user?.id" class="form-control">
+<label>{{'name:'}}</label>
+<input #name type="text" [value]="user?.NAME" class="form-control">
+<label>{{'email:'}}</label>
+<input #email type="text" [value]="user?.email" class="form-control">
+<label>{{'password:'}}</label>
+<input #password type="text" [value]="user?.PASSWORD" class="form-control">
+<button class="btn-primary" (click)="edit(name.value,id.value,email.value,password.value)">edit</button>
