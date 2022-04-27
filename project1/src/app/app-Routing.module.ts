@@ -9,15 +9,16 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { UsersComponent } from "./users/users.component";
 import { EdituserComponent } from "./edituser/edituser.component";
 import { AdminGuard } from "./admin.guard";
+import { LoginGuard } from "./login.guard";
 
 
 const routes: Routes=[
 {path:'',component:LoginComponent},
-{path:'Home',component:HomeComponent},
+{path:'Home',component:HomeComponent , canActivate:[LoginGuard]},
 {path:'admin',component:AdminComponent,canActivate:[AdminGuard] },
-{path:'user',component:UserComponent},
-{path:'edituser',component:EdituserComponent},
-{path:'user/:id',component:UsersComponent},
+{path:'user',component:UserComponent  , canActivate:[LoginGuard]},
+{path:'edituser',component:EdituserComponent, canActivate:[LoginGuard] },
+{path:'user/:id',component:UsersComponent,canActivate:[AdminGuard]},
 {path:'not-found',component:NotFoundComponent},
 {path:'**',redirectTo:'not-found'}
 ];
